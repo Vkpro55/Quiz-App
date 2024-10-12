@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #4b0082;
+            /* Indigo color */
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar {
+            background-color: #6a0dad;
+            /* Purple color */
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+            background: #8a2be2;
+            /* Blue Violet */
+        }
+
+        .sidebar a:hover {
+            background-color: #7a1d9b;
+            /* Darker Purple */
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #4b0082;
+            /* Indigo color */
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 10px 15px;
+            background-color: #8a2be2;
+            /* Blue Violet */
+            transition: background-color 0.3s;
+        }
+
+        .card a:hover {
+            background-color: #7a1d9b;
+            /* Darker Purple */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                /* Stack on small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Quiz Management Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Navigation</h2>
+            <a href="/create-quiz"><i class="fas fa-plus-circle"></i> Structure Quiz</a>
+            <a href="/get-quizzes"><i class="fas fa-list"></i> Get Quizzes</a>
+            <!-- <a href="/get-quiz-details"><i class="fas fa-info-circle"></i> Get Quiz Details</a>
+            <a href="/take-quiz"><i class="fas fa-pencil-alt"></i> Taking a Quiz</a> -->
+            <a href="/view-results"><i class="fas fa-chart-bar"></i> Viewing Results</a>
+        </div>
+        <div class="main-content">
+            <div class="card">
+                <h2>Structure Quiz</h2>
+                <p>Create a new quiz with multiple questions.</p>
+                <a href="/create-quiz">Start</a>
+            </div>
+            <div class="card">
+                <h2>Get Quizzes</h2>
+                <p>View a list of available quizzes.</p>
+                <a href="/get-quizzes">View</a>
+            </div>
+            <!-- <div class="card">
+                <h2>Get Quiz Details</h2>
+                <p>View detailed information about a specific quiz.</p>
+                <a href="/get-quiz-details">Details</a>
+            </div> -->
+            <!-- <div class="card">
+                <h2>Taking a Quiz</h2>
+                <p>Attempt a quiz and select your answers.</p>
+                <a href="/take-quiz">Take Quiz</a>
+            </div> -->
+            <div class="card">
+                <h2>Viewing Results</h2>
+                <p>Check your quiz results and performance.</p>
+                <a href="/view-results">View Results</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

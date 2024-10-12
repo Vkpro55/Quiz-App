@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Quizzes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #1c1c2e;
+            background-image: linear-gradient(to bottom right, #1c1c2e, #4b4b6e);
+            color: #f8f5e1;
+            overflow: auto;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .quiz-card {
+            background-color: #2d2d4a;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .quiz-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .quiz-description {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #6a11cb;
+            color: #f8f5e1;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #2575fc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Available Quizzes</h1>
+        <% quizzes.forEach(quiz=> { %>
+            <div class="quiz-card">
+                <div class="quiz-title">
+                    <%= quiz.quizTitle %>
+                </div>
+                <div class="quiz-description">
+                    <%= quiz.quizDescription %>
+                </div>
+                <a href="/take-quiz/<%= quiz._id %>" class="btn"><i class="fas fa-pencil-alt"></i> Take Quiz</a>
+                <a href="/quiz-details/<%= quiz._id %>" class="btn"><i class="fas fa-info-circle"></i> View Details</a>
+            </div>
+            <% }) %>
+    </div>
+</body>
+
+</html>

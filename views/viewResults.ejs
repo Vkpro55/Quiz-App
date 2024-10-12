@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Quiz Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            background-color: #1c1c2e;
+            /* Dark background color */
+            color: #ffffff;
+            /* Light text color for better readability */
+        }
+
+        .result-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Slightly transparent white for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #f8f5e1;
+            /* Light text color for better visibility */
+        }
+
+        .header,
+        .footer {
+            background-color: #4b4b6e;
+            /* Match dashboard header/footer color */
+        }
+
+        .quiz-title {
+            color: #f8f5e1;
+            /* Light color for quiz title */
+        }
+
+        .score {
+            color: #f8f5e1;
+            /* Light color for score */
+        }
+
+        .correct-answer {
+            color: #48bb78;
+            /* Green for correct */
+        }
+
+        .incorrect-answer {
+            color: #f56565;
+            /* Red for incorrect */
+        }
+
+        .back-button {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 10px 15px;
+            background-color: #8a2be2;
+            /* Blue Violet */
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #7a1d9b;
+            /* Darker Purple */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header text-white p-4">
+        <div class="container mx-auto">
+            <h1 class="text-xl font-bold">Quiz Application</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-4 p-4">
+        <h1 class="text-2xl font-bold mb-6">Your Quiz Results</h1>
+
+        <% if (results.length> 0) { %>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <% results.forEach(result=> { %>
+                    <div class="result-card p-6">
+                        <h3 class="quiz-title text-lg font-semibold">Quiz: <%= result.quizId.quizTitle %>
+                        </h3>
+                        <p class="score"><strong>Score:</strong>
+                            <%= result.score %> / <%= result.totalQuestions %>
+                        </p>
+
+                        <h4 class="font-semibold mt-2">Answers:</h4>
+                        <ul class="list-disc list-inside">
+                            <% result.quizId.questions.forEach((question, index)=> { %>
+                                <li class="mt-2">
+                                    <p><strong>Question:</strong>
+                                        <%= question.questionText %>
+                                    </p>
+                                    <p><strong>Your Answer:</strong> <span class="text-gray-300">
+                                            <%= result.userAnswers[index] %>
+                                        </span></p>
+                                    <p><strong>Correct Answer:</strong> <span class="text-gray-300">
+                                            <%= question.correctAnswer %>
+                                        </span></p>
+                                    <% if (result.userAnswers[index]===question.correctAnswer) { %>
+                                        <p class="correct-answer">Correct</p>
+                                        <% } else { %>
+                                            <p class="incorrect-answer">Incorrect</p>
+                                            <% } %>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                    <% }) %>
+            </div>
+            <% } else { %>
+                <div class="result-card p-6">
+                    <p>No quiz results available.</p>
+                </div>
+                <% } %>
+
+                    <div class="mt-6">
+                        <a href="/dashboard" class="back-button px-4 py-2 rounded">Back to Dashboard</a>
+                    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white p-4 mt-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Quiz Application</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= quiz.quizTitle %> - Details
+    </title>
+    <style>
+        body {
+            background-color: #1c1c2e;
+            background-image: linear-gradient(to bottom right, #1c1c2e, #4b4b6e);
+            color: #f8f5e1;
+            overflow: auto;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .quiz-details {
+            background-color: #2d2d4a;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .quiz-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .quiz-description {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            background-color: #3a3a5c;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .question-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #6a11cb;
+            color: #f8f5e1;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #2575fc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz Details: <%= quiz.quizTitle %>
+        </h1>
+        <div class="quiz-details">
+            <div class="quiz-description">
+                <%= quiz.quizDescription %>
+            </div>
+            <% quiz.questions.forEach((question, index)=> { %>
+                <div class="question">
+                    <div class="question-title">
+                        <%= index + 1 %>. <%= question.questionText %>
+                    </div>
+                    <div class="options">
+                        <p>A. <%= question.options.A %>
+                        </p>
+                        <p>B. <%= question.options.B %>
+                        </p>
+                        <p>C. <%= question.options.C %>
+                        </p>
+                        <p>D. <%= question.options.D %>
+                        </p>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <a href="/take-quiz/<%= quiz._id %>" class="btn">Take Quiz</a>
+    </div>
+</body>
+
+</html>

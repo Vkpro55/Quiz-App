@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Quiz App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to custom CSS -->
+    <style>
+        body {
+            background-color: #1c1c2e;
+            /* Blackish-blue background */
+            background-image: linear-gradient(to bottom right, #1c1c2e, #4b4b6e);
+            /* Gradient effect */
+            color: #f8f5e1;
+            /* Light cream text color for contrast */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .btn {
+            transition: transform 0.3s ease;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            /* Remove border for better look */
+        }
+
+        .btn-primary {
+            background-color: #6a11cb;
+            /* Customize primary button color */
+        }
+
+        .btn-secondary {
+            background-color: #2575fc;
+            /* Customize secondary button color */
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <h1>Welcome to the Quiz App</h1>
+        <p class="lead">Please choose an option below:</p>
+        <div class="d-flex flex-column flex-md-row">
+            <a href="/register" class="btn btn-primary">Register</a>
+            <a href="/login" class="btn btn-secondary">Login</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

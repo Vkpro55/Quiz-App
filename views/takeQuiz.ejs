@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Quiz</title>
+    <style>
+        body {
+            background-color: #1c1c2e;
+            background-image: linear-gradient(to bottom right, #1c1c2e, #4b4b6e);
+            color: #f8f5e1;
+            overflow: auto;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .quiz-card {
+            background-color: #2d2d4a;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .question-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #6a11cb;
+            color: #f8f5e1;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #2575fc;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+            background-color: #1db954;
+        }
+
+        .submit-btn:hover {
+            background-color: #17a244;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Take Quiz</h1>
+        <form action="/submit-quiz/<%= quiz._id %>" method="POST">
+            <% quiz.questions.forEach((question, index)=> { %>
+                <div class="quiz-card">
+                    <div class="question-title">
+                        <%= index + 1 %>. <%= question.questionText %>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="answers[<%= index %>]" value="A" required> A. <%=
+                                question.options.A %>
+                        </label><br>
+                        <label>
+                            <input type="radio" name="answers[<%= index %>]" value="B"> B. <%= question.options.B %>
+                        </label><br>
+                        <label>
+                            <input type="radio" name="answers[<%= index %>]" value="C"> C. <%= question.options.C %>
+                        </label><br>
+                        <label>
+                            <input type="radio" name="answers[<%= index %>]" value="D"> D. <%= question.options.D %>
+                        </label>
+                    </div>
+                </div>
+                <% }) %>
+                    <button type="submit" class="btn submit-btn">Submit Quiz</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
