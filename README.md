@@ -31,5 +31,6 @@ To get a local copy up and running, follow these steps:
    ### 1. Clone the repository
            git clone https://github.com/Vkpro55/Quiz-App.git
 
-   ### 2. Clone the repository
-         git clone https://github.com/Vkpro55/Quiz-App.git
+   ### 2. Install dependencies
+         cd Quiz-App
+         npm install
