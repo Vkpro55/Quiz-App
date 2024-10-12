@@ -30,7 +30,7 @@ To get a local copy up and running, follow these steps:
 
  ### 1. Clone the repository
 
-    ```bash
+   ```bash
       git clone https://github.com/Vkpro55/Quiz-App.git
 
 ### 1. Clone the repository
