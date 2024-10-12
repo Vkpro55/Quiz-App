@@ -34,3 +34,9 @@ To get a local copy up and running, follow these steps:
    ### 2. Install dependencies
          cd Quiz-App
          npm install
+   ### 3. Set up environment variables
+          PORT=5000
+          MONGODB_URI=mongo_atlas_uri
+          SESSION_SECRET=your_secret_key
+  ### 4. Running the application
+         npm start
