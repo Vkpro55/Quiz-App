@@ -32,3 +32,9 @@ To get a local copy up and running, follow these steps:
 
 ```bash
 git clone https://github.com/Vkpro55/Quiz-App.git
+
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Vkpro55/Quiz-App.git
