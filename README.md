@@ -1,40 +1,34 @@
 # Quiz App
 
-This project is a simple quiz application where users can register, log in, create quizzes, take quizzes, and view their results. It's built using Node.js, Express.js, MongoDB, and EJS.
+A simple quiz application that allows users to create quizzes, take quizzes, and view their results. This project is built using Node.js, Express.js, MongoDB, and EJS for templating.
 
-## Live Demo on Glitch:
-[https://example-glitch-demo.com](https://example-glitch-demo.com)
+## Features
 
-## Table of Contents
+- User registration and authentication
+- Create, view, and manage quizzes
+- Take quizzes and view quiz results
+- Dashboard for quiz and result management
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the Application](#running-the-application)
-- [API Documentation](#api-documentation)
-  - [Endpoints](#endpoints)
-    - [GET /quizzes](#get-quizzes)
-    - [POST /create-quiz](#post-create-quiz)
-    - [GET /take-quiz/:quizId](#get-take-quizquizid)
-    - [POST /submit-quiz/:quizId](#post-submit-quizquizid)
-- [Testing](#testing)
-- [Error Handling](#error-handling)
-- [Rate Limiting](#rate-limiting)
+## Tech Stack
+
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Frontend**: EJS for templating, CSS for styling
+- **Version Control**: Git & GitHub
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (version 12.x or higher) installed on your machine
+- MongoDB installed or use MongoDB Atlas (cloud version)
+- Git for version control
 
 ## Getting Started
 
-### Prerequisites
+To get a local copy up and running, follow these steps:
 
-Ensure that you have the following installed:
+### 1. Clone the repository
 
-- Node.js (v12.x or later)
-- npm (v6.x or later)
-- MongoDB (or MongoDB Atlas for cloud DB)
-
-### Installation
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/Vkpro55/Quiz-App.git
-   cd Quiz-App
+```bash
+git clone https://github.com/Vkpro55/Quiz-App.git
