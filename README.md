@@ -40,3 +40,18 @@ To get a local copy up and running, follow these steps:
           SESSION_SECRET=your_secret_key
   ### 4. Running the application
          npm start
+
+## LICENSE
+   
+### Explanation of Sections:
+
+1. **Features**: Highlights the key functionalities of the quiz application.
+2. **Tech Stack**: Lists the technologies used for development.
+3. **Prerequisites**: Provides a checklist of requirements needed to run the app.
+4. **Getting Started**: A step-by-step guide to cloning the repository, installing dependencies, setting environment variables, and running the application.
+5. **API Documentation**: Outlines the API endpoints for the application.
+6. **Testing**: Instructions for running tests.
+7. **License**: Information regarding the licensing of the project.
+
+Feel free to customize any section further to suit your project's specific requirements!
+
